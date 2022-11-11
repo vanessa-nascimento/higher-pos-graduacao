@@ -10,18 +10,25 @@ import {
   TextField
 } from '@mui/material';
 
-const states = [
+const curso = [
   {
-    value: 'alabama',
-    label: 'Alabama'
+    value: 'mestrado',
+    label: 'Mestrado'
   },
   {
-    value: 'new-york',
-    label: 'New York'
+    value: 'doutorado',
+    label: 'Doutorado'
+  }
+];
+
+const orientador = [
+  {
+    value: 'digiampietri',
+    label: 'Luciano Digiampietri'
   },
   {
-    value: 'san-francisco',
-    label: 'San Francisco'
+    value: 'giselesc',
+    label: 'Gisele da Silva Craveiro'
   }
 ];
 
@@ -97,7 +104,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Email Address"
+                label="Email USP"
                 name="email"
                 onChange={handleChange}
                 required
@@ -112,26 +119,12 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Phone Number"
-                name="phone"
-                onChange={handleChange}
-                type="number"
-                value={values.phone}
-                variant="outlined"
-              />
-            </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <TextField
-                fullWidth
-                label="Country"
-                name="country"
+                label="Número USP"
+                name="nusp"
                 onChange={handleChange}
                 required
-                value={values.country}
+                disabled
+                value={values.nusp}
                 variant="outlined"
               />
             </Grid>
@@ -142,16 +135,47 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Select State"
-                name="state"
+                label="Link Lattes"
+                name="lattes"
+                onChange={handleChange}
+                required
+                value={values.lattes}
+                variant="outlined"
+              />
+            </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                label="Última atualização Lattes"
+                name="updateLattes"
+                onChange={handleChange}
+                required
+                // type="date"
+                value={values.updateLattes}
+                variant="outlined"
+              />
+            </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                label="Curso"
+                name="curso"
                 onChange={handleChange}
                 required
                 select
                 SelectProps={{ native: true }}
-                value={values.state}
+                value={values.curso}
                 variant="outlined"
               >
-                {states.map((option) => (
+                {curso.map((option) => (
                   <option
                     key={option.value}
                     value={option.value}
@@ -160,6 +184,62 @@ export const AccountProfileDetails = (props) => {
                   </option>
                 ))}
               </TextField>
+            </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                label="Orientador"
+                name="orientador"
+                onChange={handleChange}
+                required
+                select
+                SelectProps={{ native: true }}
+                value={values.orientador}
+                variant="outlined"
+              >
+                {orientador.map((option) => (
+                  <option
+                    key={option.value}
+                    value={option.value}
+                  >
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
+            </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                label="Data de entrada como aluno regular"
+                name="dataEntrada"
+                onChange={handleChange}
+                required
+                value={values.dataEntrada}
+                variant="outlined"
+              />
+            </Grid>
+            <Grid
+              item
+              md={12}
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                label="Resultado avaliação"
+                name="avaliacao"
+                onChange={handleChange}
+                disabled
+                value={values.avaliacao}
+                variant="outlined"
+              />
             </Grid>
           </Grid>
         </CardContent>

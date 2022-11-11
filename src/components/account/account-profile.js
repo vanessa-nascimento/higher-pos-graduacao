@@ -15,7 +15,9 @@ const user = {
   country: 'USA',
   jobTitle: 'Senior Developer',
   name: 'Katarina Smith',
-  timezone: 'GTM-7'
+  timezone: 'GTM-7',
+  dataMaxInscricaoQuali: '25/11/2023',
+  dataMaxDissertacao: '31/12/2025'
 };
 
 export const AccountProfile = (props) => (
@@ -24,6 +26,7 @@ export const AccountProfile = (props) => (
       <Box
         sx={{
           alignItems: 'center',
+          justifyContent: 'center',
           display: 'flex',
           flexDirection: 'column'
         }}
@@ -47,13 +50,27 @@ export const AccountProfile = (props) => (
           color="textSecondary"
           variant="body2"
         >
-          {`${user.city} ${user.country}`}
+          <b>Data máxima para inscrição na qualificação:</b>
+          <br/>
         </Typography>
         <Typography
           color="textSecondary"
           variant="body2"
         >
-          {user.timezone}
+          {user.dataMaxInscricaoQuali}
+        </Typography>
+        <Typography
+          color="textSecondary"
+          variant="body2"
+        >
+          <b>Data máxima para dissertação:</b>
+          <br/>
+        </Typography>
+        <Typography
+          color="textSecondary"
+          variant="body2"
+        >
+          {user.dataMaxDissertacao}
         </Typography>
       </Box>
     </CardContent>
