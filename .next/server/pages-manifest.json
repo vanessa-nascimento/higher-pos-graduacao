@@ -1,15 +1,7 @@
 {
-  "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js",
-  "/404": "pages/404.html",
-  "/account": "pages/account.html",
-  "/": "pages/index.html",
-  "/customers": "pages/customers.html",
-  "/register": "pages/register.html",
-  "/products": "pages/products.html",
-  "/settings": "pages/settings.html",
-  "/login": "pages/login.html",
-  "/sign-in": "pages/sign-in.html",
   "/_app": "pages/_app.js",
-  "/sign-in/confirm": "pages/sign-in/confirm.html"
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/404": "pages/404.js"
 }

@@ -1,20 +1,14 @@
 import Head from 'next/head';
-import { Box, Container, Grid } from '@mui/material';
-import { Budget } from '../components/dashboard/budget';
-import { LatestOrders } from '../components/dashboard/latest-orders';
-import { LatestProducts } from '../components/dashboard/latest-products';
-import { Sales } from '../components/dashboard/sales';
-import { TasksProgress } from '../components/dashboard/tasks-progress';
-import { TotalCustomers } from '../components/dashboard/total-customers';
-import { TotalProfit } from '../components/dashboard/total-profit';
-import { TrafficByDevice } from '../components/dashboard/traffic-by-device';
+import { Box, Container, Grid, Pagination, Typography } from '@mui/material';
+import { users } from '../__mocks__/type-users';
 import { DashboardLayout } from '../components/dashboard-layout';
+import { CardSelect } from '../components/card-select/card-select';
 
 const Page = () => (
   <>
     <Head>
       <title>
-        Dashboard | Material Kit
+        Início | Higher PPgSI
       </title>
     </Head>
     <Box
@@ -25,83 +19,40 @@ const Page = () => (
       }}
     >
       <Container maxWidth={false}>
-        <Grid
-          container
-          spacing={3}
-        >
+        <Box
+            sx={{
+                alignItems: 'center',
+                display: 'flex',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                m: -1
+            }}
+            >
+            <Typography
+                sx={{ m: 1 }}
+                variant="h4"
+            >
+                Seja bem-vindo ao Higher do PPgSI, você é?
+            </Typography>
+        </Box>
+        <Box sx={{ pt: 3 }}>
           <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
+            container
+            spacing={3}
           >
-            <Budget />
+            {users.map((user) => (
+              <Grid
+                item
+                key={user.id}
+                lg={4}
+                md={6}
+                xs={12}
+              >
+                <CardSelect product={user} />
+              </Grid>
+            ))}
           </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TotalCustomers />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TasksProgress />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TotalProfit sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <Sales />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <TrafficByDevice sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <LatestProducts sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <LatestOrders />
-          </Grid>
-        </Grid>
+        </Box>
       </Container>
     </Box>
   </>
