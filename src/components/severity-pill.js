@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 
 const SeverityPillRoot = styled('span')(({ theme, ownerState }) => {
-  const backgroundColor = theme.palette[ownerState.color].main;
+  const backgroundColor = theme.palette[ownerState.color];
   const color = theme.palette[ownerState.color].contrastText;
 
   return {
@@ -48,9 +48,9 @@ SeverityPill.propTypes = {
   color: PropTypes.oneOf([
     'primary',
     'secondary',
-    'error',
+    'reprovado',
     'info',
-    'warning',
-    'success'
+    'pendente',
+    'aprovado'
   ])
 };
