@@ -46,6 +46,8 @@ export const AccountProfile = (props) => (
         >
           {user.name}
         </Typography>
+
+        {/* TEM QUE SER EDITAVELLLLLL */}
         <Typography
           color="textSecondary"
           variant="body2"
